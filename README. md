@@ -1,0 +1,42 @@
+# Threat Detection & Alerting Module
+
+## Project Overview
+This project demonstrates a small cybersecurity log-analysis and alerting module for detecting potential Malware Execution Indicators in a safe lab environment.
+
+## Objective
+The objective is to analyze sample endpoint logs, identify suspicious execution patterns, generate alerts, and document appropriate incident-response actions.
+
+## Tools Used
+- Google Colab
+- Python
+- Pandas
+- GitHub
+- Sample lab-generated endpoint logs
+
+## Detection Method
+The project analyzes process names and activity descriptions. Suspicious scripting and command-line activity is flagged for further investigation.
+
+## Alert Information
+Each detected alert includes:
+- Timestamp
+- Computer
+- User
+- Process
+- Detection pattern
+- Severity
+- Recommended action
+
+## False-Positive Review
+Some tools such as PowerShell and CMD can be used for legitimate administrative activities. Therefore, a process name alone should not be treated as confirmed malware. Additional context should be reviewed before confirming an incident.
+
+## Incident Response
+When a high-severity alert is detected, the activity should be investigated. If malicious activity is confirmed, the affected endpoint may be isolated, related logs reviewed, the issue remediated, and the incident documented.
+
+## Testing
+The detection logic was tested against sample normal and suspicious activities. The rules were adjusted to reduce simple process-name false positives and focus on suspicious activity patterns.
+
+## Limitations
+This is a safe lab prototype using sample data. It does not represent live enterprise endpoint telemetry or a production security monitoring system.
+
+## Future Improvements
+Future versions could integrate real Windows event logs, additional detection rules, automated alert
